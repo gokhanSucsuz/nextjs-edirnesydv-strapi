@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "help_types",
+  "info": {
+    "singularName": "help-type",
+    "pluralName": "help-types",
+    "displayName": "helpType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "typeOf": {
+      "type": "enumeration",
+      "enum": [
+        "Aile",
+        "Barınma-Gıda",
+        "Engelli-Yaşlı",
+        "Eğitim",
+        "Sağlık"
+      ],
+      "required": true
+    },
+    "program": {
+      "type": "enumeration",
+      "enum": [
+        "Afet-Acil Durum Yardımları",
+        "Asker Ailelerine Yönelik Düzenli Nakit Yardım Programı",
+        "Asker Çocuğu Yardımı",
+        "Aşevleri",
+        "Barınma Yardımları",
+        "Doğal Gaz Tüketim Desteği",
+        "Doğum Yardımı",
+        "Elektrik Tüketim Desteği",
+        "Engelli Aylığı",
+        "Engelli İhtiyaç Yardımları",
+        "Engelli Yakını Aylığı",
+        "Engelli Öğrencilerin Ücretsiz Taşınması",
+        "Eğitim Materyali Yardımı",
+        "Eğitim Yardımları Kapsamında Ulaşım Giderlerinin Karşılanmasına Yönelik Yardımlar",
+        "Eşi Vefat Etmiş Kadınlara Yönelik Düzenli Nakit Yardım Programı",
+        "Eşi Vefat Etmiş Kadınlara Yönelik Konut Destek Programı",
+        "Genel Sağlık Sigortası (GSS) Prim Ödemeleri",
+        "GSS Katılım Payı Ödemeleri",
+        "Gıda Yardımları",
+        "İşe Başlama Yardımı",
+        "İşe Yönlendirme Yardımı",
+        "Kronik Hastalara Kesintisiz Güç Kaynağı Desteği ve Birikmiş Elektrik Borcu Desteği",
+        "Kronik Hastalık Yardımı",
+        "Kur’an Kursu Destek Programı",
+        "Muhtelif Eğitim Yardımları",
+        "Silikozis Hastalarına Yapılan Ödemeler",
+        "Sosyal Uyum Yardımı (SUY)",
+        "Tamamlayıcı Sosyal Uyum Yardımı (T-SUY)",
+        "Terör Zararı Yardımları",
+        "Tip -1 Diyabet Tanısı Almış Kişilere Yönelik Glikoz Ölçüm Cihazı Yardımı",
+        "Türkiye Aile Destek Programı",
+        "Ulusal Vefa Programı",
+        "Vefat Yardımı",
+        "Yabancılara Yönelik Şartlı Eğitim Yardımı (YŞEY)",
+        "Yakacak Yardımları",
+        "Yaşlı Aylığı",
+        "Yurt Yapımı",
+        "Yükseköğrenim Öğrencilerine Yönelik Yardımlar",
+        "Çoklu Doğum Yardımı",
+        "Öksüz ve Yetim Yardımı",
+        "Öğle Yemeği Yardımı",
+        "Öğrenci Barınma-Taşıma-Yemek Yardımı",
+        "Ücretsiz Ders Kitabı",
+        "Şartlı Eğitim Yardımları",
+        "Şartlı Sağlık Yardımları (Sağlık ve Gebelik)",
+        "Şehit Yakınları ve Gazilere Yönelik Yardımlar"
+      ]
+    },
+    "scope": {
+      "type": "text",
+      "required": true
+    },
+    "whoCanBenefit": {
+      "type": "text",
+      "required": true
+    },
+    "requiredDocs": {
+      "type": "text",
+      "required": true
+    },
+    "amount": {
+      "type": "text",
+      "required": true
+    },
+    "paymentPeriod": {
+      "type": "string",
+      "required": true
+    },
+    "applicant": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
