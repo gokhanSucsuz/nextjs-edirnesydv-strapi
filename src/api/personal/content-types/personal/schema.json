@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personals",
+  "info": {
+    "singularName": "personal",
+    "pluralName": "personals",
+    "displayName": "personal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "personalName": {
+      "type": "string",
+      "required": true
+    },
+    "personalSurname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "title": {
+      "type": "enumeration",
+      "enum": [
+        "Büro Görevlisi",
+        "Muhasebeci",
+        "Sosyal Yardım ve İnceleme Görevlisi",
+        "Vakıf Müdürü",
+        "Yardımcı Hizmetli",
+        "Proje Personeli"
+      ],
+      "required": true
+    },
+    "project": {
+      "type": "enumeration",
+      "enum": [
+        "Hayır",
+        "Aşevi",
+        "Vefa"
+      ],
+      "required": false
+    }
+  }
+}

@@ -437,6 +437,70 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBoardoftrusteeBoardoftrustee
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'boardoftrustees';
+  info: {
+    displayName: 'boardoftrustee';
+    pluralName: 'boardoftrustees';
+    singularName: 'boardoftrustee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::boardoftrustee.boardoftrustee'
+    > &
+      Schema.Attribute.Private;
+    memberName: Schema.Attribute.String & Schema.Attribute.Required;
+    memberOrganisation: Schema.Attribute.String & Schema.Attribute.Required;
+    memberTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFoundationManagerFoundationManager
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'foundation_managers';
+  info: {
+    description: '';
+    displayName: 'foundationManager';
+    pluralName: 'foundation-managers';
+    singularName: 'foundation-manager';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files', true>;
+    info: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::foundation-manager.foundation-manager'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHelpTypeHelpType extends Struct.CollectionTypeSchema {
   collectionName: 'help_types';
   info: {
@@ -556,6 +620,118 @@ export interface ApiManagerManager extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPersonalPersonal extends Struct.CollectionTypeSchema {
+  collectionName: 'personals';
+  info: {
+    description: '';
+    displayName: 'personal';
+    pluralName: 'personals';
+    singularName: 'personal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personal.personal'
+    > &
+      Schema.Attribute.Private;
+    personalName: Schema.Attribute.String & Schema.Attribute.Required;
+    personalSurname: Schema.Attribute.String & Schema.Attribute.Required;
+    project: Schema.Attribute.Enumeration<['Hay\u0131r', 'A\u015Fevi', 'Vefa']>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Enumeration<
+      [
+        'B\u00FCro G\u00F6revlisi',
+        'Muhasebeci',
+        'Sosyal Yard\u0131m ve \u0130nceleme G\u00F6revlisi',
+        'Vak\u0131f M\u00FCd\u00FCr\u00FC',
+        'Yard\u0131mc\u0131 Hizmetli',
+        'Proje Personeli',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSodamCenterSodamCenter extends Struct.CollectionTypeSchema {
+  collectionName: 'sodam_centers';
+  info: {
+    description: '';
+    displayName: 'sodamCenter';
+    pluralName: 'sodam-centers';
+    singularName: 'sodam-center';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    info: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    latitude: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sodam-center.sodam-center'
+    > &
+      Schema.Attribute.Private;
+    longitude: Schema.Attribute.Decimal;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    tel: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWorkerWorker extends Struct.CollectionTypeSchema {
+  collectionName: 'workers';
+  info: {
+    displayName: 'worker';
+    pluralName: 'workers';
+    singularName: 'worker';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::worker.worker'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    surname: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1074,8 +1250,13 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::announcement.announcement': ApiAnnouncementAnnouncement;
       'api::article.article': ApiArticleArticle;
+      'api::boardoftrustee.boardoftrustee': ApiBoardoftrusteeBoardoftrustee;
+      'api::foundation-manager.foundation-manager': ApiFoundationManagerFoundationManager;
       'api::help-type.help-type': ApiHelpTypeHelpType;
       'api::manager.manager': ApiManagerManager;
+      'api::personal.personal': ApiPersonalPersonal;
+      'api::sodam-center.sodam-center': ApiSodamCenterSodamCenter;
+      'api::worker.worker': ApiWorkerWorker;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
